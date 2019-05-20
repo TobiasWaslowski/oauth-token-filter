@@ -8,7 +8,8 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.given;
 
-import java.util.Arrays;
+import java.util.AbstractMap.SimpleEntry;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map.Entry;
 import javax.json.Json;
@@ -58,7 +59,7 @@ public class OAuthTokenFilterTest {
   private OAuthTokenFilter testee;
 
   private static Entry<String, List<String>> param(String name, String value) {
-    return new java.util.AbstractMap.SimpleEntry<>(name, Arrays.asList(value));
+    return new SimpleEntry<>(name, Collections.singletonList(value));
   }
 
   @Before
