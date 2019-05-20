@@ -18,7 +18,7 @@ import lombok.Builder;
 @Builder
 public class OAuthTokenFilter implements ClientRequestFilter, ClientResponseFilter {
 
-  private Long tokenLifetime; //In seconds, e.g. 3600L for one hour.
+  private Long tokenLifetimeSeconds;
   private LocalDateTime accessTokenExpires;
   private Client client;
   private String username;
@@ -52,7 +52,7 @@ public class OAuthTokenFilter implements ClientRequestFilter, ClientResponseFilt
       form.param("client_id", clientId);
       form.param("client_secret", clientSecret);
 
-      LocalDateTime timestamp = LocalDateTime.now().plusSeconds(tokenLifetime);
+      LocalDateTime timestamp = LocalDateTime.now().plusSeconds(tokenLifetimeSeconds);
 
       Response response = client.target(loginUrl)
           .request()
