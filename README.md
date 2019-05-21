@@ -7,7 +7,7 @@ checks them for validity and refreshes them when necessary.
 
 ## Installing / Getting started
 
-To include the OAuthTokenFilter in your project, simpy add it as a Maven Dependency. 
+To include the OAuthTokenFilter in your project, simply add it as a Maven Dependency. 
 
 ```shell
   <dependency>
@@ -37,9 +37,9 @@ ClientBuilder.newBuilder()
 
 The OAuthTokenProvider filters all server Requests and Responses from and to the client.
 By default, the filter() functions work as follows:
-* filter(ClientRequestContext) adds a Token to every request that the client sends
-* filter(ClientRequestContext, ClientResponseContext) checks if the server responds with a 
-  401 Unauthorized and resets the token if it does.
+* `filter(ClientRequestContext)` adds a Token to every request that the client sends
+* `filter(ClientRequestContext, ClientResponseContext)` checks if the server responds with a 
+  401 Unauthorized status and resets the token if it does.
 
 ## Developing
 
@@ -58,6 +58,6 @@ We're using the GoogleStyle formatting. You can import the following configurati
 into the IDE of your choice:
 https://raw.githubusercontent.com/google/styleguide/gh-pages/intellij-java-google-style.xml
 
-## Licensing
+## License
 
 The code in this project is licensed under Apache 2.0 license.
